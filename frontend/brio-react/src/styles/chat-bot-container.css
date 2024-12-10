@@ -1,0 +1,13 @@
+/* ChatbotContainer.css */
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw; /* Largura ajustada para 80% da largura da tela */
+  max-width: 100%; /* Garante que o chatbot não ultrapasse 100% da largura da tela */
+  height: 80vh; /* Altura ajustada para 80% da altura da tela */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  border: 5px solid #1a2665;
+  overflow: hidden;
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+}

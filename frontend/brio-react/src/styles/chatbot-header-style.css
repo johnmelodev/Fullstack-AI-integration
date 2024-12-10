@@ -1,0 +1,17 @@
+/* ChatbotHeader.css */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #1a2665;
+  color: white;
+}
+
+.chatbot-header img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.chatbot-header h1 {
+  font-size: 1.2em;
+}

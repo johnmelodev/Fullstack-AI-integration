@@ -1,0 +1,44 @@
+.chatbot-content {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto; /* Garante scroll no eixo vertical */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre mensagens */
+  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+  max-height: 100%; /* Limita o crescimento ao espaço disponível */
+}
+
+.user-message,
+.bot-message {
+  max-width: 100%; /* Impede que o conteúdo exceda os limites */
+  word-wrap: break-word; /* Quebra texto longo */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.user-message {
+  background-color: #f0f0f0; /* Exemplo de cor para mensagem do usuário */
+  align-self: flex-end; /* Alinha à direita */
+}
+
+.bot-message {
+  background-color: #ffeb3b; /* Exemplo de cor para mensagem do bot */
+  align-self: flex-start; /* Alinha à esquerda */
+}
+
+.bot-message ul {
+  margin: 0; /* Remove margens externas */
+  padding-left: 20px; /* Adiciona espaçamento interno para bullets */
+  list-style-type: disc; /* Garante o estilo correto dos bullets */
+}
+
+.bot-message li {
+  margin: 5px 0; /* Espaçamento vertical entre os itens */
+  font-weight: normal; /* Opcional: Ajusta o peso da fonte */
+}
+
+.break-word {
+  word-wrap: break-word; /* Garante que as palavras longas sejam quebradas */
+  max-width: 100ch; /* Limita a largura do texto a 100 caracteres */
+}
