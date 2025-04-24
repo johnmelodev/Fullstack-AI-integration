@@ -12,7 +12,7 @@ const PORT = 5001;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Permitir apenas o frontend
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
@@ -34,9 +34,25 @@ const geminiConfig = {
   maxOutputTokens: 4096,
 };
 
+// Definindo o sistema de instruções para o Gemini
+const systemInstruction = {
+  parts: [
+    {
+      text: `Você é um assistente AI amigável e prestativo chamado Brio AI.
+            Seja cordial, paciente e forneça respostas informativas e bem estruturadas.
+            Quando o usuário fizer uma pergunta, tente fornecer uma resposta completa e útil.
+            Mantenha o tom conversacional e natural, como se estivesse conversando com um amigo.
+            Se não souber a resposta a uma pergunta, admita em vez de inventar informações.
+            Responda sempre em português do Brasil, utilizando um vocabulário rico mas acessível.
+            Quando relevante, estruture suas respostas com marcação markdown para melhor legibilidade.`,
+    },
+  ],
+};
+
 const geminiModel = googleAI.getGenerativeModel({
-  model: "gemini-pro", // Ou "gemini-pro-vision" para modelos de visão
+  model: "gemini-pro",
   geminiConfig,
+  systemInstruction,
 });
 
 app.post("/generate-text", async (req, res) => {
